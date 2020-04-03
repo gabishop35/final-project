@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mapbox_location_field',
-    'storages',
+    
 
 
     # Third-party

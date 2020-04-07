@@ -7,7 +7,6 @@ from django.template.loader import get_template
 
 
 
-
 # Create your views here.
 def homepage(request):
     lakes = Lake.objects.all()

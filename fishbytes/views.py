@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Lake, Fish, Regulation, Tag, Catch, User, Question
 from fishbytes.forms import CatchForm
 from django.contrib.auth.decorators import login_required
-from django.http import HttpRequest
+from django.http import HttpResponse
 from django.template.loader import get_template
 
 

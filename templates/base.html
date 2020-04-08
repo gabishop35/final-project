@@ -17,6 +17,28 @@
     <script src="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.js" defer></script>
     <script src="/static/jquery.fittext.js" defer></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <script>
+        
+        // This is the service worker with the Cache-first network
+
+        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+        // Check compatibility for the browser we're running this in
+        if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                console.log("[PWA Builder] active service worker found, no need to register");
+            } else {
+                // Register the service worker
+                navigator.serviceWorker
+                    .register("/serviceworker.js", {
+                        scope:'./'
+                    })
+                    .then(function (reg) {
+                        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                    });
+            }
+        }
+    </script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
     {% block meta %}{% endblock %}
 
@@ -34,17 +56,13 @@
     <header class="header">
 
         <div class="resize">
-        <a class="titlelink" href="/"><h1 class ="title" id="headline">FishBytes</h1></a>
+        <h1 class ="title" id="headline">FishBytes</h1>
         </div>
     <div class="link">
         <a class="link home" href="/">Home</a>
-        <a class="link profile" href= "{% url 'profile-page' %}">Profile</a>
+        <a class="link profile" href= "{% url 'profile-page' %}">View Profile</a>
         <a class="link" href="{% url 'fishid' %}">FishID</a>
-        {% if user.is_authenticated %}
         <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/?next=/profile/">Log Out</a>
-        {% else %}
-        <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/">Log In</a>
-        {% endif %}
     </div>
 
     </header>
@@ -52,7 +70,7 @@
 
     <main>
         {% block content %}
-        <h4 class="blurb">Welcome to FishBytes! Your source for rules, regulations, and information for fish found in the lakes of the great state of North
+        <h4 class="blurb">Welcome to Fishbytes! Your source for rules, regulations, and information for fish found in the lakes of the great state of North
             Carolina! Please select a lake from the dropdown menu below to get started.</h4>
         <div class="dropdown dropdown-right">
             <button type="button" class="dropdown-trigger">Please Select a Lake</button>
@@ -65,14 +83,13 @@
 
         <div class="license">
             <a class="license-link"
-            href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Don't have a Fishing
+                href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Don't have a Fishing
                 License? Click here to get one!</a>
         </div>
 
         <div class="homepage-pic-div">
             <img src="{% static 'Man-Fishing-in-Lake.jpg' %}" alt="My image" class="homepage-pic">
         </div>
-        <p class="footer">Information provided by ncwildlife.org</p>
 
         {% endblock %}
 
@@ -80,25 +97,3 @@
 </body>
 
 </html>
-        <script>
-
-            // This is the service worker with the Cache-first network
-
-            // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-            // Check compatibility for the browser we're running this in
-            if ("serviceWorker" in navigator) {
-                if (navigator.serviceWorker.controller) {
-                    console.log("[PWA Builder] active service worker found, no need to register");
-                } else {
-                    // Register the service worker
-                    navigator.serviceWorker
-                        .register("/serviceworker.js", {
-                            scope: './'
-                        })
-                        .then(function (reg) {
-                            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                        });
-                }
-            }
-        </script>

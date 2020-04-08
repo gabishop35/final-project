@@ -5,7 +5,30 @@ const precacheFiles = [
     "/",
     "/profile/",
     "/fishid/",
-    "/static/style.css"
+    "/static/style.css",
+    "/static/identify.js",
+    "/static/jquery.fittext.js",
+    "/static/fish/Black-Crappie-Duane-Raver.jpg",		
+    "/static/fish/Striped-Bass-Duane-Raver.jpg",
+    "/static/fish/Black-Crappie-Live.jpg",	
+    "/static/fish/Striped_bass.jpg",
+    "/static/fish/Black_crappie.jpg",		
+    "/static/fish/White-Bass-Duane-Raver.jpg",
+    "/static/fish/Bluegill-Duane-Raver.jpg",		
+    "/static/fish/White-crappie-Duane Raver.jpg",
+    "/static/fish/Bluegill.jpg",				
+    "/static/fish/White_bass.jpg",
+    "/static/fish/ChannelCatfish-Duane-Raver.jpg",		
+    "/static/fish/White_crappie.jpg",
+    "/static/fish/Flathead-Catfish-Duane-Raver.jpg",	
+    "/static/fish/Yellow_perch.jpg",
+    "/static/fish/Largemouth-Bass-Duane-Raver.jpg",		
+    "/static/fish/channel_catfish.jpg",
+    "/static/fish/Smallmouth-Bass-Duane-Raver.jpg",		
+    "/static/fish/yellow-perch-Duane-Raver.jpg",
+    "/static/fish/Smallmouth_bass.jpg",
+    "/lake/2/",
+    "lake/1/"
 ];
 
 self.addEventListener("install", function (event) {

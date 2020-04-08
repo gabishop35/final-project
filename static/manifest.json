@@ -14,8 +14,8 @@
 	"prefer_related_applications" : false,
 	"icons" : [
 		{
-			"src": "https://peaceful-bastion-81254.herokuapp.com/windows10/SplashScreen.scale-200.png.png",
-			"sizes": "1240x600"
+			"src": "https://fishbytes.herokuapp.com/static/icon.png",
+			"sizes": "490x490"
 
 		}],
 	"url" : "https://fishbytes.herokuapp.com/",

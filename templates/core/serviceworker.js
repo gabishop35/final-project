@@ -28,7 +28,7 @@ const precacheFiles = [
     "/static/fish/yellow-perch-Duane-Raver.jpg",
     "/static/fish/Smallmouth_bass.jpg",
     "/lake/2/",
-    "lake/1/"
+    "/lake/1/"
 ];
 
 self.addEventListener("install", function (event) {

@@ -157,7 +157,7 @@
                 "sha256:eb84e7e5b07ff3725ab05977ac56d5eeb0c510795aeb48e8b691491be3c5745b"
             ],
             "index": "pypi",
-            "version": "==7.1.1"
+            "version": "==8.1.1"
         },
         "psycopg2": {
             "hashes": [
